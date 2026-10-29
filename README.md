@@ -1,5 +1,5 @@
 # CCK
-hey guys sander hier. Wat een leuke groep zijn wij toch!!
+hey guys sander hier. Wat een leuke groep zijn wij toch!! bwa valt over te discussiëren
 
 ## Design
 
