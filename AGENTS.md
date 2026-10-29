@@ -1,3 +1,11 @@
+#AGENTS.md
+
+## Project
+- Creative Coding Kortijk, yeah
+- Voor wie? voor bezoekers van cck
+
+## Stack & constrains
+- lol
 # AGENTS.md
 
 ## Project
