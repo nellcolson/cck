@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const team = await getCollection("team");
+  return team.map((member) => ({
+    params: { id: member.id },
+    props: { member },
+  }));
+}
+
+const { member } = Astro.props;
+const { Content } = await render(member);
+---
+
+<Base title={member.data.name}>
+  <div class="container">
+    <h2><span>{member.data.name}</span></h2>
+    <p class="function">{member.data.function}</p>
+    <img
+      src={member.data.pic.src}
+      width={300}
+      height={300}
+      alt={`Profile pic of ${member.data.name}`}
+    />
+    <div class="md">
+      <Content />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .function {
+    margin-bottom: var(--sp-l);
+  }
+
+  img {
+    filter: grayscale(100%) brightness(110%);
+    object-fit: cover;
+    aspect-ratio: 1;
+    display: block;
+    margin-bottom: var(--sp-l);
+  }
+</style>
