@@ -19,3 +19,6 @@
 - Schema's staan in `src/content.config.ts`; ontbreekt een veld in een markdown-bestand, dan faalt de build
 - Styling: eigen CSS, geen CSS-framework (geen Tailwind, Bootstrap, ...)
 
+- Astro versie 7.4
+- Lettertype: Space Grotesk via `@fontsource-variable/space-grotesk`
+- Kleuren, font-sizes en spacing staan als CSS custom properties in `src/styles/global.css`
