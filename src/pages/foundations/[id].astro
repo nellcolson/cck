@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+    const foundations = await getCollection("foundations");
+    return foundations.map((foundation) => ({
+        params: { id: foundation.id },
+        props: { foundation },
+    }));
+}
+
+const { foundation } = Astro.props;
+const { Content } = await render(foundation);
+---
+
+<Base title={foundation.data.title}>
+    <article class="container">
+        <h1>{foundation.data.title}</h1>
+        <p>{foundation.data.description}</p>
+        <Content />
+    </article>
+</Base>
